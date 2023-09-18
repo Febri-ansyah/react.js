@@ -1,0 +1,29 @@
+.. Test Get All
+GET http://localhost:5000/Jurusan
+
+###
+.. Test Get By ID
+GET http://localhost:5000/Jurusan/1
+
+
+###
+.. Test Create Jurusan
+POST http://localhost:5000/Jurusan
+Content-Type: application/json
+
+{
+	"keterangan":"Manajemen Informatika"
+}
+
+###
+.. Test Update Jurusan id 1
+PATCH http://localhost:5000/Jurusan/1
+Content-Type: application/json
+
+{
+	"keterangan":"Administrasi Perkantoran"
+}
+
+###
+.. Test Delete Jurusan id 1
+DELETE http://localhost:5000/Jurusan/1
