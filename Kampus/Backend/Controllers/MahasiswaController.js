@@ -1,9 +1,9 @@
-import Jurusan from "../Models/JurusanModel.js"
+import Mahasiswa from "../Models/MahasiswaModel.js"
 
 // Function: FindAll
-export const getJurusanAll = async(req, res) =>{
+export const getMahasiswaAll = async(req, res) =>{
 	try{
-		const response = await Jurusan.findAll();
+		const response = await Mahasiswa.findAll();
 		res.status(200).json(response);
 	}catch(error){
 		console.log(error.message);
@@ -11,9 +11,9 @@ export const getJurusanAll = async(req, res) =>{
 }
 
 // Function: FindByID
-export const getJurusanByID = async(req, res) =>{
+export const getMahasiswaByID = async(req, res) =>{
 	try{
-		const response = await Jurusan.findOne({
+		const response = await Mahasiswa.findOne({
 			where:{
 				id:req.params.id
 			}
@@ -25,9 +25,9 @@ export const getJurusanByID = async(req, res) =>{
 }
 
 // Function: Create
-export const createJurusan = async(req, res) =>{
+export const createMahasiswa = async(req, res) =>{
 	try{
-		await Jurusan.create(req.body);
+		await Mahasiswa.create(req.body);
 		res.status(201).json({message:"User Created"});
 	}catch(error){
 		console.log(error.message);
@@ -35,9 +35,9 @@ export const createJurusan = async(req, res) =>{
 }
 
 // Function: Update
-export const updateJurusan = async(req, res) =>{
+export const updateMahasiswa = async(req, res) =>{
 	try{
-		await Jurusan.update(req.body,{
+		await Mahasiswa.update(req.body,{
 			where:{
 				id:req.params.id
 			}
@@ -49,9 +49,9 @@ export const updateJurusan = async(req, res) =>{
 }
 
 // Function: Delete
-export const deleteJurusan = async(req, res) =>{
+export const deleteMahasiswa = async(req, res) =>{
 	try{
-		await Jurusan.destroy({
+		await Mahasiswa.destroy({
 			where:{
 				id:req.params.id
 			}

@@ -1,3 +1,4 @@
+.. JURUSAN TEST API ----------------------
 .. Test Get All
 GET http://localhost:5000/Jurusan
 
@@ -10,9 +11,9 @@ GET http://localhost:5000/Jurusan/1
 .. Test Create Jurusan
 POST http://localhost:5000/Jurusan
 Content-Type: application/json
-
-{
-	"keterangan":"Manajemen Informatika"
+{ 
+	"idJurusan" :1,
+	"keterangan":"Administrasi Perkantoran"
 }
 
 ###
@@ -21,9 +22,56 @@ PATCH http://localhost:5000/Jurusan/1
 Content-Type: application/json
 
 {
-	"keterangan":"Administrasi Perkantoran"
+	"keterangan":"Manajemen Informatika"
 }
 
 ###
 .. Test Delete Jurusan id 1
 DELETE http://localhost:5000/Jurusan/1
+
+.. endTest --------------------------------
+
+
+.. MAHASISWA TEST API ---------------------
+.. Test Get All
+GET http://localhost:5000/Mahasiswa
+
+###
+.. Test Get By ID
+GET http://localhost:5000/Mahasiswa/1
+
+
+###
+.. Test Create Mahasiswa
+POST http://localhost:5000/Mahasiswa
+Content-Type: application/json
+
+{ 
+	"idMahasiswa" : 1,
+	"idJurusan" : 1,
+	"nama" : "Agus",
+	"tglLahir" : "2001-02-27",
+	"tmpLahir" : "Depok",
+	"alamat" : "DepokDua",
+	"telpon" : "0891234123"
+}
+
+###
+.. Test Update Mahasiswa id 1
+PATCH http://localhost:5000/Mahasiswa/1
+Content-Type: application/json
+
+{ 
+	"idJurusan" : 1,
+	"nama" : "febriansyah",
+	"tglLahir" : "2001-02-27",
+	"tmpLahir" : "Depok",
+	"alamat" : "Lio",
+	"telpon" : "0891234123"
+}
+
+###
+.. Test Delete Mahasiswa id 1
+DELETE http://localhost:5000/Mahasiswa/1
+
+.. endTest --------------------------------

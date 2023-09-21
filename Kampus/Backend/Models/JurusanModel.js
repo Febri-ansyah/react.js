@@ -5,9 +5,13 @@ import db from "../Config/Database.js"
 const {DataTypes} = Sequelize;
 
 const Jurusan = db.define("Jurusan",{
-	keterangan:DataTypes.STRING(50),
+	idJurusan:{
+		type:DataTypes.INTEGER,
+		primaryKey:true,
+		field:'id_jurusan'
+	},
+	keterangan:DataTypes.STRING(50)
 },{
-	
 	paranoid:true,
 	createdAt:"created_at",
 	updatedAt:"updated_at",
