@@ -15,7 +15,7 @@ export const getPembayaranByID = async(req, res) =>{
 	try{
 		const response = await Pembayaran.findOne({
 			where:{
-				id:req.params.id
+				idPembayaran:req.params.id
 			}
 		});
 		res.status(200).json(response);
@@ -39,7 +39,7 @@ export const updatePembayaran = async(req, res) =>{
 	try{
 		await Pembayaran.update(req.body,{
 			where:{
-				id:req.params.id
+				idPembayaran:req.params.id
 			}
 		});
 		res.status(200).json({message:"User Edited"});
@@ -53,7 +53,7 @@ export const deletePembayaran = async(req, res) =>{
 	try{
 		await Pembayaran.destroy({
 			where:{
-				id:req.params.id
+				idPembayaran:req.params.id
 			}
 		});
 		res.status(200).json({message:"User Deleted"});

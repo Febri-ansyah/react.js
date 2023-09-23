@@ -15,7 +15,7 @@ export const getJurusanByID = async(req, res) =>{
 	try{
 		const response = await Jurusan.findOne({
 			where:{
-				id:req.params.id
+				idJurusan:req.params.id
 			}
 		});
 		res.status(200).json(response);
@@ -39,7 +39,7 @@ export const updateJurusan = async(req, res) =>{
 	try{
 		await Jurusan.update(req.body,{
 			where:{
-				id:req.params.id
+				idJurusan:req.params.id
 			}
 		});
 		res.status(200).json({message:"User Edited"});
@@ -53,7 +53,7 @@ export const deleteJurusan = async(req, res) =>{
 	try{
 		await Jurusan.destroy({
 			where:{
-				id:req.params.id
+				idJurusan:req.params.id
 			}
 		});
 		res.status(200).json({message:"User Deleted"});

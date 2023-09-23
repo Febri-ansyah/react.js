@@ -15,7 +15,7 @@ export const getMahasiswaByID = async(req, res) =>{
 	try{
 		const response = await Mahasiswa.findOne({
 			where:{
-				id:req.params.id
+				idMahasiswa:req.params.id
 			}
 		});
 		res.status(200).json(response);
@@ -39,7 +39,7 @@ export const updateMahasiswa = async(req, res) =>{
 	try{
 		await Mahasiswa.update(req.body,{
 			where:{
-				id:req.params.id
+				idMahasiswa:req.params.id
 			}
 		});
 		res.status(200).json({message:"User Edited"});
@@ -53,7 +53,7 @@ export const deleteMahasiswa = async(req, res) =>{
 	try{
 		await Mahasiswa.destroy({
 			where:{
-				id:req.params.id
+				idMahasiswa:req.params.id
 			}
 		});
 		res.status(200).json({message:"User Deleted"});
